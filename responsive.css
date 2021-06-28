@@ -1,0 +1,96 @@
+/*Breakpoint untuk Tablet*/
+@media (max-width: 1000px) {
+    nav ul{
+        flex: 3;
+    }
+
+    main{
+        flex-direction: column;
+    }
+
+    .cta-container{
+        background-size: 400px;
+        background-position: top;
+        padding: 20em 0 0;
+        text-align: center;
+    }
+
+    .cta-container *{
+        margin-left: auto;
+        margin-right: auto;
+    }
+
+    #content{
+        margin: auto;
+    }
+
+    article{
+        margin: 0;
+    }
+
+    article h1{
+        font-size: 2em;
+    }
+
+    .skill-item{
+        width: 45%;
+    }
+
+    .card{
+        flex: 40%;
+        margin: 20px;
+    }
+
+    .card-illustration i{
+        font-size: 7em;
+    }
+
+    table td, table th{
+        border: 1px solid #ddd;
+        padding: 6px;
+    }
+
+    footer .nav-logo .nav-img{
+        font-size: 1.5em;
+    }
+
+}
+
+/*Breakpoint untuk Smartphone*/
+@media (max-width: 576px) {
+
+    #float-nav{
+        display: none;
+    }
+
+    article h1{
+        font-size: 1.5em;
+    }
+
+    .about-me-img img{
+        width: 200px;
+        height: auto;
+    }
+
+    .skill-item{
+        font-size: .8em;
+        width: 100%;
+    }
+
+    table{
+        font-size: .5em;
+    }
+
+    table tr td img{
+        width: 40%;
+    }
+
+    footer ul .nav-item{
+        flex: 100%;
+    }
+
+    #mobile-hamburger{
+        display: unset;
+    }
+
+}
