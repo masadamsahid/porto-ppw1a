@@ -15,6 +15,28 @@
 
     <!--  Font Awesome  -->
     <script src="https://kit.fontawesome.com/e837a94a5d.js" crossorigin="anonymous"></script>
+
+    <?php
+    #Get Database
+    $server = "localhost";
+    $usr = "root";
+    $pswd = "";
+    $db = "pokemon_db";
+
+    $connect = mysqli_connect($server, $usr, $pswd, $db);
+
+    if(!$connect){
+        die(("Gagal konek : " . mysqli_connect_error()));
+    }
+    echo "<br/>";
+
+
+    $sql = "SELECT * FROM poke_db";
+
+    $result = mysqli_query($connect, $sql);
+
+    ?>
+
 </head>
 <body>
 
@@ -283,6 +305,30 @@
                 </thead>
 
                 <tbody id="poke-table">
+                <?php
+                if(mysqli_num_rows($result) > 0){
+
+                    while ($row=mysqli_fetch_assoc($result)){
+                        echo "<tr>";
+
+                        echo "<td> ".
+
+                            $row['ID'] . "</td> <td>".
+                            $row['Name'] . "</td> <td>".
+                            $row['Type1'] . "</td> <td>".
+                            $row['Type2'] . "</td> <td>".
+                            $row['Power'] . "</td> <td>".
+                            "<img src='./pokemon db/poke_images/images/". $row['Name'] . ".png' />"
+
+                            ."</td>";
+
+                        echo "</tr>";
+                    }
+
+                }else{
+                    echo "Pokedex Database Ga ketemu";
+                }
+                ?>
                 </tbody>
 
             </table>
@@ -349,7 +395,7 @@
     </div>
 </footer>
 
-<!--  Orang JS  -->
+<!--  Poke JS  -->
 
 </body>
 </html>
