@@ -28,12 +28,6 @@
     if(!$connect){
         die(("Gagal konek : " . mysqli_connect_error()));
     }
-
-
-    $sql = "SELECT * FROM poke_db";
-
-    $result = mysqli_query($connect, $sql);
-
     ?>
 
 </head>
@@ -305,6 +299,19 @@
                     <input type="submit" class="btn-default" value="Tampilkan"/>
                 </div>
             </form>
+
+            <?php
+            $selectAll = "SELECT * FROM poke_db";
+
+            if (!isset($_GET['poke-number'])){
+                $sql = $selectAll;
+            }else{
+                $limit = "\nLIMIT " . $_GET['poke-number'];
+                $sql = $selectAll . $limit;
+            }
+
+            $result = mysqli_query($connect, $sql);
+            ?>
 
             <table>
 
