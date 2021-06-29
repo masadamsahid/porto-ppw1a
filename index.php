@@ -19,6 +19,9 @@
     <!--  Font Awesome  -->
     <script src="https://kit.fontawesome.com/e837a94a5d.js" crossorigin="anonymous"></script>
 
+    <!--  Mob Navigation  -->
+    <script src="navigasi-mobile.js"></script>
+
     <?php
     #Get Database
     $server = "localhost";
@@ -423,3 +426,13 @@
 
 </body>
 </html>
+
+
+
+
+
+
+
+
+
+
