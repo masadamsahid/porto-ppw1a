@@ -10,6 +10,9 @@
     <!--  CSS  -->
     <link rel="stylesheet" href="./style.css">
 
+    <!--  Impor Font CSS  -->
+    <link rel="stylesheet" href="font.css">
+
     <!--  Responsive CSS  -->
     <link rel="stylesheet" href="./responsive.css">
 
@@ -369,10 +372,10 @@
             </p>
 
             <div class="socmed" >
-                <a href="https://www.linkedin.com/in/masadamsahid/" target="_blank">
+                <a href="https://www.youtube.com/channel/UCjwGYOoNHTYzgwtih6oNBfQ" target="_blank">
                     <i class="fab fa-youtube"></i>
                 </a>
-                <a href="https://www.linkedin.com/in/masadamsahid/" target="_blank">
+                <a href="https://github.com/masadamsahid" target="_blank">
                     <i class="fab fa-github"></i>
                 </a>
                 <a href="https://www.linkedin.com/in/masadamsahid/" target="_blank">
