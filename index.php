@@ -28,7 +28,6 @@
     if(!$connect){
         die(("Gagal konek : " . mysqli_connect_error()));
     }
-    echo "<br/>";
 
 
     $sql = "SELECT * FROM poke_db";
@@ -276,20 +275,36 @@
                 Pokemon List
             </h1>
 
-            <p>Tampilkan sebanyak <span id="banyak-pokemon">-</span> pokemon.</p>
+            <p>Tampilkan sebanyak
+                <span id="banyak-pokemon">
+                    <?php
+                    if (!isset($_GET['poke-number'])){
+                        echo 0;
+                    }else{
+                        echo  $_GET['poke-number'];
+                    }
+                    ?>
+                </span> pokemon.
+            </p>
 
-            <input id="poke-num"
-                   type="range"
-                   name="poke-number"
-                   min="1" max="500" value="1"
-                   onchange=""
-            >
-
-            <div id="tampilkan-btn-wrapper">
-                <button class="btn-default" onclick="">
-                    Tampilkan
-                </button>
-            </div>
+            <form action="index.php" method="get" id="poke-form">
+                <input id="poke-num"
+                       type="range"
+                       name="poke-number"
+                       min="0" max="1000"
+                       value="<?php
+                       if (!isset($_GET['poke-number'])){
+                           echo 0;
+                       }else{
+                           echo  $_GET['poke-number'];
+                       }
+                       ?>"
+                       onchange="inputPoke()"
+                >
+                <div id="tampilkan-btn-wrapper">
+                    <input type="submit" class="btn-default" value="Tampilkan"/>
+                </div>
+            </form>
 
             <table>
 
@@ -314,13 +329,11 @@
                         echo "<td> ".
 
                             $row['ID'] . "</td> <td>".
+                            "<img src='./assets/pokemon db/poke_images/images/". $row['Name'] . ".png' /> </td><td>".
                             $row['Name'] . "</td> <td>".
                             $row['Type1'] . "</td> <td>".
                             $row['Type2'] . "</td> <td>".
-                            $row['Power'] . "</td> <td>".
-                            "<img src='./pokemon db/poke_images/images/". $row['Name'] . ".png' />"
-
-                            ."</td>";
+                            $row['Power'] . "</td>";
 
                         echo "</tr>";
                     }
@@ -396,6 +409,7 @@
 </footer>
 
 <!--  Poke JS  -->
+<script src="poke.js"></script>
 
 </body>
 </html>
